@@ -1,4 +1,4 @@
-# Install and initialize, 
+## Install and initialize, 
 npx claude-flow@latest init
 
 # Or using the new Ruflo name
