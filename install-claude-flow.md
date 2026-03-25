@@ -43,12 +43,16 @@ Step 4: Save and Exit
 
 # create simple shell with all the command prompt
 Step 1: Open Your .zshrc File
-vim ~/.zshrc
+`vim ~/.zshrc`
+
 Step 2: Add This At The Bottom
-alias mockchat-ai='cd ~/Documents/mockchat && claude-flow memory init && claude-flow daemon start && claude'
+`alias mockchat-ai='cd ~/Documents/mockchat && claude-flow memory init && claude-flow daemon start && claude'`
+
 Step 3: Save and Exit
+
 Step 4: Reload Your Shell
-source ~/.zshrc
+`source ~/.zshrc`
+
 Step 5: Test It
-Go to your folder ex: cd projects/mockchat
-mockchat-ai
+`Go to your folder ex: cd projects/mockchat`
+`mockchat-ai`
