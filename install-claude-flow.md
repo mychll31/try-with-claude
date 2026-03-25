@@ -2,10 +2,10 @@
 ### Install and initialize, 
 npx claude-flow@latest init
 
-# Or using the new Ruflo name
+### Or using the new Ruflo name
 npx ruflo@latest init
 
-# This creates a CLAUDE.md file and sets up the agent structure inside your project.
+### This creates a CLAUDE.md file and sets up the agent structure inside your project.
 Step 1: Check Your Current and edit CLAUDE.md First
 vim ~/Documents/mockchat/CLAUDE.md (edit from your editor)
 Step 2: Add This At The Very Top
