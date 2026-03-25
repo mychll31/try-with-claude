@@ -6,8 +6,10 @@ npx claude-flow@latest init
 npx ruflo@latest init
 
 ### This creates a CLAUDE.md file and sets up the agent structure inside your project.
-Step 1: Check Your Current and edit CLAUDE.md First
-vim ~/Documents/mockchat/CLAUDE.md (edit from your editor)
+Step 1:
+Check Your Current and edit CLAUDE.md First
+`vim ~/Documents/mockchat/CLAUDE.md (edit from your editor)`
+
 Step 2: Add This At The Very Top
 ```
 ## Claude Flow Instructions
