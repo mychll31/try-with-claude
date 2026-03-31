@@ -1,6 +1,4 @@
 `cd mockchat`
-claude
-```
 
 Make sure you're at the **root** (not inside be or fe) so agents can see both folders.
 
