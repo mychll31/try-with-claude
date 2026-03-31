@@ -1,4 +1,4 @@
-cd mockchat
+`cd mockchat`
 claude
 ```
 
@@ -88,3 +88,35 @@ Important notes:
 - Follow existing code structure and conventions in the project
 - Use Laravel best practices (FormRequest, Resource, Policy if needed)
 - Use Vue 3 Composition API and Pinia for state management
+
+
+---
+Security Prompt:
+
+```
+Review this code as a senior security engineer.
+
+Check for:
+1. Security vulnerabilities
+2. Injection risks (SQL, NoSQL, Command, XSS)
+3. Authentication flaws
+4. Authorization issues (RBAC, privilege escalation)
+5. Hardcoded secrets or API keys
+6. Insecure data handling (plaintext passwords, tokens)
+7. Missing input validation or sanitization
+8. Unsafe file uploads
+9. Insecure API endpoints
+10. Improper error handling (leaking sensitive info)
+11. Missing rate limiting or brute-force protection
+12. Dependency vulnerabilities
+13. Logging of sensitive data
+14. Misuse of environment variables
+15. Insecure external API calls
+
+For each issue:
+- Explain the risk
+- Show example attack scenario
+- Suggest exact fix (code-level if possible)
+
+Be strict and assume this will be deployed in production.
+```
