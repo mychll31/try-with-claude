@@ -3,8 +3,26 @@
 ### Project Status
 This project is already in active development. Do NOT start from scratch.
 
-### Before Writing Any Code
+---
+
+## 🔐 SECURITY FIRST RULE (CRITICAL)
+
+This project may include AI-generated ("vibe-coded") components.
+
+Claude MUST assume:
+- Code may be insecure by default
+- Inputs may be malicious
+- APIs may be abused
+- Data may be sensitive
+
+👉 ALWAYS prioritize SECURITY over speed or convenience.
+
+---
+
+## Before Writing Any Code
+
 1. Read and understand the existing codebase in mockchat-be/ and mockchat-fe/ and always say "Hi Boss"
+
 2. Store existing conventions to memory bank:
    - Current migrations in mockchat-be/database/migrations/
    - Existing API endpoints in mockchat-be/routes/api.php
@@ -14,11 +32,80 @@ This project is already in active development. Do NOT start from scratch.
    - API wrapper in mockchat-fe/src/api/chat.ts
    - Pinia stores in mockchat-fe/src/stores/
    - Naming conventions already used in the project
+
 3. Follow ALL existing patterns — do not introduce new conventions
+
 4. Do not overwrite or break any existing functionality
+
 5. New code must integrate seamlessly with what already exists
 
-### Memory & Coordination Rules
+6. all changes applied should be apply in mockchat-mobile as well
+
+---
+
+## 🛡️ SECURITY CHECKS (MANDATORY BEFORE CODING)
+
+Before generating or modifying any code, Claude MUST:
+
+- Check for injection risks (SQL, NoSQL, XSS)
+- Ensure proper input validation
+- Ensure authentication & authorization are respected
+- Prevent access to other users' data
+- Avoid hardcoded secrets or credentials
+- Ensure file uploads are safe
+- Avoid exposing internal errors or stack traces
+- Ensure API endpoints are protected
+- Avoid insecure direct object references (IDOR)
+- Check for rate limiting / abuse potential
+
+If unsure → STOP and explain the risk instead of guessing.
+
+---
+
+## 🚫 NEVER DO THESE (STRICT RULES)
+
+Claude must NEVER:
+
+- ❌ Write raw SQL queries with string concatenation
+- ❌ Store passwords in plaintext
+- ❌ Expose API keys or secrets
+- ❌ Disable authentication checks
+- ❌ Assume user input is safe
+- ❌ Allow direct access to resources without ownership validation
+- ❌ Suggest `eval`, `exec`, or unsafe system calls
+- ❌ Return full error stack traces to frontend
+- ❌ Allow unrestricted file uploads
+
+---
+
+## 🧠 SAFE CODING RULES
+
+Claude MUST:
+
+- ✅ Use parameterized queries / ORM (Eloquent)
+- ✅ Validate ALL inputs (request validation)
+- ✅ Use Laravel middleware for auth/roles
+- ✅ Use policies/gates for authorization
+- ✅ Sanitize output when needed
+- ✅ Use environment variables for secrets
+- ✅ Enforce file upload restrictions (type + size)
+- ✅ Return safe error messages only
+
+---
+
+## 🔍 AI + SECURITY AUDIT MODE
+
+When reviewing code, Claude must:
+
+1. Identify vulnerabilities
+2. Explain attack scenario
+3. Suggest fix
+4. Prioritize severity (High / Medium / Low)
+
+---
+
+## 🧱 MEMORY & COORDINATION RULES
+
 - Initialize memory bank so all agents share the same context
 - Use wiring gap matrix to ensure backend API endpoints
   match frontend API calls in mockchat-fe/src/api/chat.ts
@@ -31,6 +118,77 @@ This project is already in active development. Do NOT start from scratch.
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+---
+
+## 🔐 SECURITY ARCHITECTURE GUIDELINES
+
+- Treat each conversation as user-isolated data
+- Never expose other conversation IDs
+- Always validate ownership before returning data
+- API must assume requests can be tampered
+
+---
+
+## 🔐 API SECURITY RULES
+
+For ALL endpoints:
+
+- Require validation (FormRequest)
+- Enforce authentication if needed
+- Validate conversation ownership
+- Do NOT trust frontend data
+- Add rate limiting for `/send`
+
+---
+
+## 🔐 DATABASE SECURITY
+
+- Use Eloquent ORM only
+- No raw SQL unless parameterized
+- Validate all IDs (avoid IDOR)
+- Do not expose internal DB structure in responses
+
+---
+
+## 🔐 FILE / MEDIA (FUTURE SAFE)
+
+If file uploads are introduced:
+
+- Restrict file types
+- Restrict file size
+- Store outside public root
+- Generate secure filenames
+
+---
+
+## 🔐 ENVIRONMENT SECURITY
+
+- All API keys must be in `.env`
+- Never expose `.env` in logs or responses
+- Never commit secrets to repository
+
+---
+
+## 🔐 ERROR HANDLING
+
+- Return generic errors to frontend
+- Log full errors internally only
+
+---
+
+## 🔐 DEPLOYMENT AWARENESS
+
+Claude must assume:
+
+- App may run in Docker
+- App may be exposed to internet
+- App may be multi-tenant
+
+Therefore:
+- Avoid assumptions of "trusted environment"
+- Always code defensively
+
+---
 ## Project Overview
 
 MockChat is a customer service & sales training app. Trainees chat with AI-simulated Filipino customers (Tagalog replies) and practice Facebook Ads scenarios. Two active apps share this repo:
