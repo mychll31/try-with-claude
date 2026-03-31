@@ -87,7 +87,7 @@ Important notes:
 - Use Laravel best practices (FormRequest, Resource, Policy if needed)
 - Use Vue 3 Composition API and Pinia for state management
 
-
+```
 ---
 Security Prompt:
 
